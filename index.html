@@ -1,157 +1,157 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <title>Bootstrap Example</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-    <title>Enqiry Form</title>
+    <title>Welcome</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
- <style>
-     form{
-        background: linear-gradient(to top right, #33ccff 1%, #ff99cc 100%) fixed;
-        border-radius: 30px;
-    }
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            font: 400 15px/1.8 "Lato", sans-serif;
+            color: #777;
+        }
 
-    input , select{
-        border-radius: 10px;
-    }
- </style>
+        .bgimg-1,
+        .bgimg-2,
+        .bgimg-3 {
+            position: relative;
+            opacity: 0.65;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
 
+        }
+
+        .bgimg-1 {
+            background-image: url("college.jpg");
+            min-height: 100%;
+        }
+
+        .bgimg-2 {
+            background-image: url("gmit.jpg");
+            min-height: 400px;
+        }
+
+        .bgimg-3 {
+            background-image: url("studying.jpg");
+            min-height: 400px;
+        }
+
+        .caption {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            color: #000;
+        }
+
+        .caption span.border {
+            background-color: #111;
+            color: #fff;
+            padding: 18px;
+            font-size: 25px;
+            letter-spacing: 10px;
+        }
+
+        h3 {
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            font: 20px "Lato", sans-serif;
+            color: #111;
+        }
+
+        /* Turn off parallax scrolling for tablets and phones */
+        @media only screen and (max-device-width: 1024px) {
+
+            .bgimg-1,
+            .bgimg-2,
+            .bgimg-3 {
+                background-attachment: scroll;
+            }
+        }
+    </style>
 </head>
 
-<body class="container ">
-    <h2 style="text-align: center; background: linear-gradient(to top right, #cc00cc 1%, #ff99cc 74%); margin-left: 20px; border-radius: 10px;">Enquiry Form</h2>
-    <form class="container">
-       <label style="margin-left: 15px;"><b>Status: Enquiry</b></label>
-        <br>
-        <div class="form-group col-md-12">
-            <label for="source">Source</label>
-            <select id="source" class="form-control">
-                <option selected>CAMPUS</option>
-       
-            </select>
-        </div><br>
+<body>
 
-        <div style="margin-left: 15px;">
-            <label for="e_date">Enquiry Date: </label>
-  <input type="date" id="e_date" name="enquirydate">
+    <div class="bgimg-1">
+        <div class="caption">
+            <span class="border">WELCOME</span>
+        </div>
+    </div>
 
-        </div><br>
+    <div style="color: #777;background-color:white;text-align:center;padding:50px 80px;text-align: justify;">
+        <h3 style="text-align:center;">College</h3>
+        <p>Our institute delights stakeholders by providing hi-tech
+            quality education and training through creating a virtual industrial environment and innovative academic
+            ambiance.To encourage students in
+            extra-curricular activities, GMIT has additional bodies to look after sports and cultural activities in and
+            out of the campus.To create a comprehensive
+            Technical platform for students to develop inter personnel skills, creativity and the incisive edge of
+            professionalism.</p>
+    </div>
 
-        <div class="form-row">
-            <div class="form-group col-md-12">
-                <label for="ugpg">Programme:</label>
-                <select id="ugpg" class="form-control" required>
-                    <option >UG</option>
-                    <option >PG</option>
-                </select>
-            </div>
-            <div class="form-group col-md-12">
-                <label for="course">Course</label>
-                <select id="course" class="form-control" required>
-                    <option >BE</option>
-                    <option >MTECH</option>
-                    <option >MBA</option>
-                    <option >BSC</option>
-                    <option >B COM</option>
-                    <option >M COM</option>
-                    <option >B-PHARAMA</option>
-                    <option >M-PHARAMA</option>
-                </select>
-            </div>
+    <div class="bgimg-2">
+        <div class="caption">
+            <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">GM Institute of
+                Technology </span>
         </div>
+    </div>
 
-        <div class="form-group col-md-12"  >
-            <label for="optradio">Branch:</label><br>
-            <label class="radio-inline col-md-1" >
-                <input type="radio" name="optradio"required >AI & ML
-              </label>
-              <label class="radio-inline col-md-1">
-                <input type="radio" name="optradio">CSE
-              </label>
-              <label class="radio-inline col-md-1">
-                <input type="radio" name="optradio">ISE
-              </label>
-              <label class="radio-inline  col-md-1">
-                <input type="radio" name="optradio">E&CE
-              </label>
-              <label class="radio-inline col-md-1 ">
-                <input type="radio" name="optradio">CE
-              </label>
-              <label class="radio-inline col-md-1">
-                <input type="radio" name="optradio">ME
-              </label>
-              <label class="radio-inline col-md-1">
-                <input type="radio" name="optradio">BT
-              </label>
-              <label class="radio-inline col-md-1">
-                <input type="radio" name="optradio">E&E
-              </label>
+    <div style="position:relative;">
+        <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+            <p> Institute For Engineering Research and Publication (IFERP) is one of the world's largest Non-profitable
+                professional associations operating under Technoarete Research And Development Association (TRADA) meant
+                for research and development in the field of Engineering, Science & Technology. IFERP is a paramount
+                body which has brought technical revolution and sustainable development in the field of Engineering,
+                science and technology.
+            </p>
+        </div>
+    </div>
 
-          </div>
+    <div class="bgimg-3">
+        <div class="caption">
+            <span class="border" style="background-color:transparent;font-size:25px;color: #f7f7f7;">ADMISSION
+                OPEN</span>
+        </div>
+    </div>
 
-        <div class="form-group col-md-12">
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id="name" >
+    <div style="position:relative;">
+        <div style="color:#ddd;background-color:#282E34;text-align:center;padding:50px 80px;text-align: justify;">
+            <p>The Institution is affiliated to Visvesvaraya Technological University (VTU), Belagavi, and is accredited
+                by NBA for the programs CSE, ECE, Civil and Mechanical Engineering. In addition to this the institution
+                is also accredited by NAAC, New Delhi. The institution has AICTE approval. It is one of the leading
+                Engineering and Management Institution in the central part of Karnataka.</p>
         </div>
-        <div class="form-group col-md-12">
-            <label for="mob">Mobile Number</label>
-            <input type="tel"  pattern="[0-9]{10}" class="form-control" id="mob" >
-        </div>
-        <div class="form-group col-md-12">
-            <label for="email">Email</label>
-            <input type="text" class="form-control" id="email" >
-        </div>
-        <div class="form-group col-md-12">
-            <label for="email">Email</label>
-            <input type="text" class="form-control" id="email" placeholder="@gmail.com" >
-        </div>
-        <div class="form-group col-md-12">
-            <label for="clg">College Studied</label>
-            <input type="text" class="form-control" id="clg"  >
-        </div>
+    </div>
 
-        <div class="form-row">
-            <div class="form-group col-md-6">
-                <label for="inputCity">City/Village</label>
-                <input type="text" class="form-control" id="inputCity">
-            </div>
-            <div class="form-group col-md-6">
-                <label for="dist">District</label>
-                <input type="text" class="form-control" id="dist">
-                </select>
-            </div>
-           
+    <div class="bgimg-1">
+        <div class="caption">
+            <span class="border">Hurry! </span><br>
+            <button type="submit" class="btn btn-Secondary col-lg-2" style="padding: 10px; margin-left: 42%;color:white; background-color: rgb(66, 58, 58); border: 2px solid white;"><b>Enroll now</b> </button><br><br>
         </div>
+    </div>
 
-        <div class="form-row">
-           
-            <div class="form-group col-md-6">
-                <label for="inputState">State</label>
-                <input type="text" class="form-control" id="inputState">
-                </select>
-            </div>
-            <div class="form-group col-md-6">
-                <label for="inputZip">pin</label>
-                <input type="tel" pattern="[0-9]{10}" class="form-control" id="inputZip">
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                    Check me out
-                </label>
-            </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button><br><br>
-    </form>
+<!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
 </body>
 
 </html>

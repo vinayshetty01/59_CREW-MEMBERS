@@ -13,16 +13,45 @@
     <!-- ------------------------------jquery--------------------------------------- -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <link rel="stylesheet" href="pre_admission.css">
+    <script src="pre_admission.js"></script>
     <title>Pre_Admission</title>
 
-    
+    <link rel="icon" href="logo.png" type="image/jpg" radius>
 </head>
 
 <body class="container">
 
-   
+    <!-- -----------------------------Navbar--------------------------------------------------------------------- -->
+    <ul class="nav nav-tabs ">
+        <li class="nav-item">
+            <a id="Ad_cat" class="nav-link active" aria-current="page" href="#" onclick="adcat()">Admission category</a>
+        </li>
+        <li class="nav-item">
+            <a id="person_det" class="nav-link " href="#" onclick="personal()">Personal Details</a>
+        </li>
+        <li class="nav-item">
+            <a id="address_det" class="nav-link " href="#" onclick="adrdet()">Address Details</a>
+        </li>
+        <!-- <li class="nav-item">
+            <a id= class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li> -->
+    </ul>
 
-   
+    <!-- -----------------------------Navbar finished--------------------------------------------------------------------- -->
+
+    <!-- -------------------------alerts---------------------------------------------------------------------------- -->
+
+
+
+
+    <div class="alert alert-warning alert-dismissible fade show mt-5" role="alert">
+        <strong>Congrats!</strong> You are eligible to get admission in our college
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <hr style="font-weight: 900;">
+    <!-- -------------------------alerts finished---------------------------------------------------------------------------- -->
 
 
     <!-- ----------------------------Admission caategory--------------------------------------------------------- -->
@@ -121,7 +150,9 @@
         </div>
 
        
-       
+        <div class="mb-3 mt-5 ml-5 " style="margin-left: 90%;"> 
+        <button type="button" class="btn btn-danger " onclick="personal()">Next>></button><br><br> 
+ </div>
     </form>
 
 
@@ -189,7 +220,11 @@
      </div> -->
         
 
-       
+        <div class="mb-3 mt-5  " > 
+            <button type="button" class="btn btn-danger " onclick="adcat()">Prev</button> 
+            <button type="button" class="btn btn-danger " onclick="adrdet()" style="margin-left: 85%;">Next>></button><br><br> 
+     </div>
+
     </form>
     <!-- --------------------------------------------personal details finished------------------------------------------------------- -->
 
@@ -218,6 +253,10 @@
             <input type="tel" class="form-control" id="taluk">
         </div>
 
+        <div class="mb-3 mt-5  " > 
+            <button type="button" class="btn btn-danger " onclick="personal()">Prev</button> 
+            <button type="button" class="btn btn-danger " onclick="submit()" style="margin-left: 85%;">Submit</button><br><br> 
+     </div>
 
     </form>
     <!-- --------------------------------------------address details finished------------------------------------------------------- -->

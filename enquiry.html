@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-    <title>Enqiry Form</title>
+     <!-- -----------------------------------------icon -------------------------------------------->
+     <link rel="icon" href="quiz/logo.png" type="image/jpg" radius>
+        <title>Enqiry Form</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -18,7 +20,7 @@
             border-radius: 30px;
             padding: 8%;
             padding-top: 2%;
-            padding-bottom: 18%;
+            padding-bottom: 30%;
         }
 
         label {
@@ -75,7 +77,11 @@
         
          <div class="form-group col-md-12">
             <label for="name">Name</label>
-            <input type="text" class="form-control radius" id="name">
+            <input type="text" class="form-control radius" id="name" required>
+        </div>
+        <div class="form-group col-md-12">
+            <label for="pect">Your Last Year Percentage</label>
+            <input type="number" class="form-control radius" id="pect" required>
         </div>
 
         <button type="submit" class="btn btn-danger col-lg-12">Submit</button><br><br>
@@ -128,16 +134,23 @@
    
 
     <div id="sorry">
-        <h1> Sorry no available seats for this branch 😢.</h1>
+        <h1> Sorry! no available seats for this branch  or You are not eligible😢.</h1>
     </div>
 
     <div id="congrats">
         <h1>Seats are available,Are you sure to take the quiz?</h1>
-        <button type="button" class="btn btn-primary col-lg-2" > <a href="#" style="color:white ;">Yes</a> </button>
-        <button type="button" class="btn btn-danger col-lg-2" >  <a href="#" style="color:white ;">No</a> </button>
+        <button type="button" class="btn btn-primary col-lg-2" onclick="shiftindex()"> Yes</button>
+        <button type="button" class="btn btn-danger col-lg-2" onclick="shifttoback()">  No </button>
     </div>
+<script>
+    function shiftindex(){
+        window.location.href="quiz/quiz.html"
+    }
 
-
+    function shifttoback(){
+        window.location.href="index.html";
+    }
+</script>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -185,11 +198,11 @@
 
     function checkseats() {
         let branch = document.getElementById("course").value;
-       //  alert(branch);
-
+       // alert(branch);
+        if(branch!="none"){
         firebase.firestore().collection('Seats').doc(branch).get().then(snapshot => {
             // alert("hi");
-            if (snapshot.data().seats > 0) {
+            if ((snapshot.data().seats > 0)&&(document.getElementById("pect").value>50)) {
                 // alert("eligible bro");
                 $("#mainform").hide();
                 $("#congrats").show();
@@ -199,6 +212,9 @@
                 // document.body.innerHTML = `<h1> Sorry no available seats for this branch please try any other branches </h1>`;
             }
         });
+    }else{
+        alert("select a branch"  );
+    }
     }
 </script>
 

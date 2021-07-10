@@ -127,7 +127,15 @@
         </div>
    
 
-    
+    <div id="sorry">
+        <h1> Sorry no available seats for this branch 😢.</h1>
+    </div>
+
+    <div id="congrats">
+        <h1>Seats are available,Are you sure to take the quiz?</h1>
+        <button type="button" class="btn btn-primary col-lg-2" > <a href="#" style="color:white ;">Yes</a> </button>
+        <button type="button" class="btn btn-danger col-lg-2" >  <a href="#" style="color:white ;">No</a> </button>
+    </div>
 
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -170,14 +178,26 @@
 
 <script>
 
+    $(document).ready( function(){
+        $("#sorry").hide();
+        $("#congrats").hide();
+    })
+
     function checkseats() {
         let branch = document.getElementById("course").value;
        //  alert(branch);
 
         firebase.firestore().collection('Seats').doc(branch).get().then(snapshot => {
             // alert("hi");
-           
-            
+            if (snapshot.data().seats > 0) {
+                // alert("eligible bro");
+                $("#mainform").hide();
+                $("#congrats").show();
+            }else{
+                $("#mainform").hide();
+                $("#sorry").show();
+                // document.body.innerHTML = `<h1> Sorry no available seats for this branch please try any other branches </h1>`;
+            }
         });
     }
 </script>

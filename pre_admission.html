@@ -1,265 +1,211 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <title>Admission Form</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <!-- ------------------------------jquery--------------------------------------- -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        form {
+            background: linear-gradient(to top right, #33ccff 1%, #ff99cc 100%) fixed;
+            border-radius: 30px;
+            padding: 8%;
+            padding-top: 1%;
+            padding-bottom: 110%;
 
-    <link rel="stylesheet" href="pre_admission.css">
-    <script src="pre_admission.js"></script>
-    <title>Pre_Admission</title>
+        }
 
-    <link rel="icon" href="logo.png" type="image/jpg" radius>
+        label {
+            font-size: 18px;
+        }
+
+        .radius {
+
+            border-radius: 20px;
+        }
+
+        body {
+            background: linear-gradient(rgb(62, 221, 168) 0%, white 95%) fixed;
+            ;
+        }
+    </style>
+
 </head>
 
-<body class="container">
-
-    <!-- -----------------------------Navbar--------------------------------------------------------------------- -->
-    <ul class="nav nav-tabs ">
-        <li class="nav-item">
-            <a id="Ad_cat" class="nav-link active" aria-current="page" href="#" onclick="adcat()">Admission category</a>
-        </li>
-        <li class="nav-item">
-            <a id="person_det" class="nav-link " href="#" onclick="personal()">Personal Details</a>
-        </li>
-        <li class="nav-item">
-            <a id="address_det" class="nav-link " href="#" onclick="adrdet()">Address Details</a>
-        </li>
-        <!-- <li class="nav-item">
-            <a id= class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li> -->
-    </ul>
-
-    <!-- -----------------------------Navbar finished--------------------------------------------------------------------- -->
-
-    <!-- -------------------------alerts---------------------------------------------------------------------------- -->
-
-
-
-
-    <div class="alert alert-warning alert-dismissible fade show mt-5" role="alert">
-        <strong>Congrats!</strong> You are eligible to get admission in our college
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-
-    <hr style="font-weight: 900;">
-    <!-- -------------------------alerts finished---------------------------------------------------------------------------- -->
-
-
-    <!-- ----------------------------Admission caategory--------------------------------------------------------- -->
-    <form id="Admission_cat">
-
-        <h2>Admission category</h2><br>
-        <div class="mb-3">
-            <label for="acyear" class="form-label"> Academic Year Passed</label>
-            <input type="text" class="form-control" id="acyear">
-        </div>
-        <div class="mb-3 mt-5">
-            <label for="college" class="form-label">College</label>
-            <input type="text" class="form-control" id="college">
-            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-        </div>
-
-        <div class="mb-3 mt-5">
-            <label for="gender"> Programme</label>
-            <select class=" col-lg-12" name="prog" id="programme">
-                <option value="none" selected>--Select--</option>
-                <option value="UG">UG</option>
-                <option value="PG">PG</option>
-
-            </select>
-
-        </div>
-        
-        <div class="mb-3 mt-5">
-            <label for="course"> Course</label>
-            <select class=" col-lg-12" name="course" id="course">
-                <option value="none" selected>--Select--</option>
-                <option value="BE">B.E</option>
-                <option value="BArch">B.Arch</option>
-                <option value=""></option>
-
-            </select>
-
-        </div>
-
-        <div class="mb-3 mt-5">
-            <label for="disc"> Discipline</label>
-            <select class=" col-lg-12" name="disc" id="disc">
-                <option value="none" selected>--Select--</option>
-                <option value="ISE">INFORMATION SCIENCE ENGG.</option>
-                <option value="CIV">CIVIL ENGG.</option>
-                <option value="MEC">MECHANICAL ENGG.</option>
-                <option value="ELE">ELECTRICAL ENGG.</option>
-                <option value="ECE">ELECTRONICS & COMMUNICATION ENGG.</option>
-                <option value="CSE">COMPUTER SCIENCE ENGG.</option>
-
-
-            </select>
-
-        </div>
-        
-        <div class="mb-3 mt-5">
-            <label for="quota"> Quota</label>
-            <select class=" col-lg-12" name="quota" id="quota">
-                <option value="none" selected>--Select--</option>
-                <option value="CET">CET</option>
-                <option value="CET">SNQ</option>
-                <option value="JEE">JEE</option>
-                <option value="COMEDK">COMED-K</option>
-                <option value="MANAGEMENT">MANAGEMENT</option>
-                
-                <option value=""></option>
-
-            </select>
-
-        </div>
-
-        <div class="mb-3 mt-5 ">
-            <label for="nkar"> NON-KARNTAKA</label>
-            <select class=" col-lg-12" name="nkar" id="nkar">
-                <option value="none" selected>--Select--</option>
-                <option value="yes">yes</option>
-               
-                
-                <option value="no">no</option>
-
-            </select>
-
-        </div>
-
-        <div class="mb-3 mt-5 ">
-            <label for="hstreq">HOSTEL REQUIRED? </label>
-            <select class=" col-lg-12" name="hstreq" id="hstreq">
-                <option value="none" selected>--Select--</option>
-                <option value="yes1">yes</option>
-               
-                
-                <option value="no1">no</option>
-
-            </select>
-
-        </div>
-
+<body class="container ">
+    <h2 style="text-align: center;  margin-left: 20px; border-radius: 10px;">Admission Form</h2>
+    <form id="mainform" onsubmit="event.preventDefault(); checkseats();">
+        <br><br>
+        <!-- <label style="margin-left: 15px;"><b>Status: Enquiry</b></label> -->
+        <br><br>
+        <!-- <div class="form-group col-md-12">
+            <label for="source">Source</label>
+            <select id="source" class="form-control radius">
+                <option  class="radius" selected>CAMPUS</option>
        
-        <div class="mb-3 mt-5 ml-5 " style="margin-left: 90%;"> 
-        <button type="button" class="btn btn-danger " onclick="personal()">Next>></button><br><br> 
- </div>
-    </form>
-
-
-
-    <!-- ----------------------------Admission caategoryfinished--------------------------------------------------------- -->
-
-
-    <!-- --------------------------------------------personal details------------------------------------------------------- -->
-
-    <form id="Personal">
-
-        <h2>personal Details</h2><br>
-        <div class="mb-3">
-            <label for="name" class="form-label"> Student Name</label>
-            <input type="text" class="form-control" id="name">
-        </div>
-
-
-        <div class="mb-3 ">
-            <label for="dob" class="form-label">D.O.B</label>
-            <input type="date" class="form-control" id="dob">
-        </div>
-
-        <div class="mb-3 mt-5">
-            <label for="gender"> Select you gender</label>
-            <select name="gender" id="gender">
-                <option value="none" selected>Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">other</option>
             </select>
+        </div><br> -->
 
 
-            <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
-        </div>
-        <div class="mb-3">
-            <label for="fname" class="form-label">Father name</label>
-            <input type="text" class="form-control" id="fname">
-        </div>
-        <div class="mb-3">
-            <label for="mname" class="form-label">Mother name</label>
-            <input type="text" class="form-control" id="mname">
+
+
+
+
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="course">Course</label>
+                <select id="course" class="form-control radius" required>
+                    <option value="none" selected disabled>--Select--</option>
+                    <option class="radius" value="ISE">ISE</option>
+                    <option class="radius" value="CSE">CSE</option>
+                    <option class="radius" value="ME">ME</option>
+                    <option class="radius" value="ELE">ELE</option>
+                    <option class="radius" value="ECE">ECE</option>
+                    <option class="radius" value="CIV">CIV</option>
+
+                </select>
+            </div>
         </div>
 
-        <div class="mb-3">
+
+
+        <div class="form-group col-md-12">
+            <label for="name">Student name</label>
+            <input type="text" class="form-control radius" id="name" required>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label for="gender">Gender</label>
+                <select id="gender" class="form-control radius" required>
+                    <option value="" selected disabled>--Select--</option>
+                    <option class="radius" value="male">male</option>
+                    <option class="radius" value="female">female</option>
+
+                </select>
+            </div>
+        </div>
+        <div class="form-group col-md-12">
+            <label for="pect">Your Last Year Percentage</label>
+            <input type="number" class="form-control radius" id="pect" required>
+            <label for="img">Upload your last year marks card</label>
+            <input type="file" id="img" class="radius" onchange="choosefileop1(event)">
+            <button type="button" id="upload" class="radius">Upload</button>
+            <input type="text" id="imgref" class="radius" style="display: none;">
+        </div>
+
+        <div class="form-group col-md-12">
+            <label for="fname">Father name</label>
+            <input type="text" class="form-control radius" id="fname" required>
+        </div>
+
+        <div class="form-group col-md-12">
+            <label for="mname">Mother name</label>
+            <input type="text" class="form-control radius" id="mname" required>
+        </div>
+
+
+        <div class="form-group col-md-12">
+            <label for="phone">Phone</label>
+            <input type="number" class="form-control radius" id="phone" required>
+        </div>
+
+
+        <div class=" col-md-12">
             <label for="religion" class="form-label">Religion</label>
-            <input type="text" class="form-control" id="religion">
+            <input type="text" class="form-control  radius" id="religion" required>
         </div>
-        <div class="mb-3">
+        <div class=" col-md-12">
             <label for="caste" class="form-label">Caste</label>
-            <input type="text" class="form-control" id="caste">
+            <input type="text" class="form-control  radius" id="caste" required>
         </div>
-        <div class="mb-3">
+        <div class=" col-md-12">
             <label for="category" class="form-label">Category</label>
-            <input type="text" class="form-control" id="category">
-        </div>
-        <div class="mb-3">
-            <label for="parentphone" class="form-label">Parent mobile </label>
-            <input type="tel" class="form-control" id="parentphone">
+            <input type="text" class="form-control  radius" id="category" required><br>
+
+            <label for="address" class="form-label  col-md-12"> Address</label>
+            <div class="mb-3 col-md-12">
+
+                <!-- <input type="text" class="form-control" id="branch"> -->
+                <textarea name="address" id="address" class="radius" cols="40" rows="5" required></textarea>
+            </div>
+            <div class="mb-3 col-md-12">
+                <label for="state" class="form-label">State</label>
+                <input type="text" class="form-control radius" id="state" required>
+            </div>
+            <div class="mb-3 col-md-12">
+                <label for="dist" class="form-label">District</label>
+                <input type="text" class="form-control radius" id="dist" required>
+            </div>
+            <div class="mb-3 col-md-12">
+                <label for="taluk" class="form-label">Taluk</label>
+                <input type="tel" class="form-control radius" id="taluk" required><br>
+            </div>
+
         </div>
 
+        <br>
+        <br>
 
-        <!-- <div class="mb-3 mt-5  " style="margin-left: 10%;"> 
-            <button type="button" class="btn btn-danger " onclick="adcat()">Prev</button> 
-     </div> -->
+
+
+
+
+
+        <button type="submit" class="btn btn-danger col-md-12 radius">Submit</button><br><br>
+    </form>
+    <!--
+        <div class="form-group col-md-12">
+            <label for="mob">Mobile Number</label>
+            <input type="tel"  pattern="[0-9]{10}" class="form-control  radius" id="mob" >
+        </div>
         
-
-        <div class="mb-3 mt-5  " > 
-            <button type="button" class="btn btn-danger " onclick="adcat()">Prev</button> 
-            <button type="button" class="btn btn-danger " onclick="adrdet()" style="margin-left: 85%;">Next>></button><br><br> 
-     </div>
-
-    </form>
-    <!-- --------------------------------------------personal details finished------------------------------------------------------- -->
-
-
-    <!-- --------------------------------------------address details------------------------------------------------------- -->
-
-    <form id="Address">
-
-        <h2>Address Details</h2><br>
-        <label for="address" class="form-label">Address</label>
-        <div class="mb-3">
-
-            <!-- <input type="text" class="form-control" id="branch"> -->
-            <textarea name="address" id="address" cols="40" rows="5"></textarea>
+        <div class="form-group col-md-12">
+            <label for="email">Email</label>
+            <input type="text" class="form-control radius" id="email" placeholder="example@gmail.com" >
         </div>
-        <div class="mb-3">
-            <label for="state" class="form-label">State</label>
-            <input type="text" class="form-control" id="state">
-        </div>
-        <div class="mb-3">
-            <label for="dist" class="form-label">District</label>
-            <input type="text" class="form-control" id="dist">
-        </div>
-        <div class="mb-3">
-            <label for="taluk" class="form-label">Taluk</label>
-            <input type="tel" class="form-control" id="taluk">
+      
+
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputCity">City/Village</label>
+                <input type="text" class="form-control  radius" id="inputCity">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="dist">District</label>
+                <input type="text" class="form-control radius" id="dist">
+                </select>
+            </div>
+           
         </div>
 
-        <div class="mb-3 mt-5  " > 
-            <button type="button" class="btn btn-danger " onclick="personal()">Prev</button> 
-            <button type="button" class="btn btn-danger " onclick="submit()" style="margin-left: 85%;">Submit</button><br><br> 
-     </div>
+        <div class="form-row">
+           
+            <div class="form-group col-md-6">
+                <label for="inputState">State</label>
+                <input type="text" class="form-control radius" id="inputState">
+                </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputZip">pin</label>
+                <input type="text"  class="form-control radius" id="inputZip">
+            </div>
+        </div> -->
+    <div class="form-group">
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck" style="display: none;">
+            <label class="form-check-label" for="gridCheck">
 
-    </form>
-    <!-- --------------------------------------------address details finished------------------------------------------------------- -->
+            </label>
+        </div>
+    </div>
 
 
 
@@ -277,8 +223,136 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyBqEz72BvLmoG7yzd6zvj4DpWoVqB94nYQ",
+            authDomain: "admission-220b4.firebaseapp.com",
+            projectId: "admission-220b4",
+            storageBucket: "admission-220b4.appspot.com",
+            messagingSenderId: "1060325018473",
+            appId: "1:1060325018473:web:a1025be3e9c706280f4bf8",
+            measurementId: "G-43X7ETFYQP"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
 
     </script>
 </body>
+
+<script>
+
+    $(document).ready(function () {
+        $("#sorry").hide();
+        $("#congrats").hide();
+    })
+
+    function checkseats() {
+        if (document.getElementById("imgref").value != '') {
+            let branch = document.getElementById("course").value;
+            // alert(branch);
+            if (branch != "none") {
+                firebase.firestore().collection('Seats').doc(branch).get().then(snapshot => {
+                    // alert("hi");
+                    if ((snapshot.data().seats > 0) && (document.getElementById("pect").value > 50)) {
+                        alert("working");
+                        firebase.firestore().collection('users').doc(document.getElementById("phone").value).update({
+                            uname: document.getElementById("name").value,
+                            course: document.getElementById("course").value,
+
+                            Father_name: document.getElementById("fname").value,
+                            Mother_nmae: document.getElementById("mname").value,
+                            Uploadref: document.getElementById("imgref").value,
+                            Gender: document.getElementById("gender").value,
+                            Address: document.getElementById("address").value,
+                            Phone: document.getElementById("phone").value,
+                            Percentagelastyear: document.getElementById("pect").value,
+                            Religion: document.getElementById("religion").value,
+                            caste: document.getElementById("caste").value,
+                            category: document.getElementById("category").value,
+                            state: document.getElementById("state").value,
+                            taluk: document.getElementById("taluk").value,
+                            district: document.getElementById("dist").value
+
+
+
+
+
+
+                        }).then(function () {
+                            var value1 = document.getElementById("phone").value;
+                            var value2 = '';
+                            var queryString = "?para1=" + value1 + "&para2=" + value2;
+                            window.location.href = "Personal.html" + queryString;
+                        });
+                    } else {
+                            alert("Seats are full");
+                        // document.body.innerHTML = `<h1> Sorry no available seats for this branch please try any other branches </h1>`;
+                    }
+                });
+            } else {
+                alert("select a branch");
+            }
+        } else {
+            alert("Upload Marks card photo")
+        }
+    }
+</script>
+
+
+<script>
+    function choosefileop1(e) {
+        pfile1 = e.target.files[0];
+        document.getElementById('upload').onclick = function () {
+            // alert(mfiles[0].name);
+            //  ImgName = document.getElementById('namebox').value;
+            uploadTask = firebase.storage().ref('users/' + pfile1.name + ".png").put(pfile1);
+
+            uploadTask.on('state_changed', function (snapshot) {
+                var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                // document.getElementById('mUpProgress').innerHTML = 'Upload' + progress + '%';
+            },
+                function (error) {
+                    alert('error in saving the image');
+                },
+
+                function () {
+                    uploadTask.snapshot.ref.getDownloadURL().then(function (url) {
+
+                        mImgUrl = url;
+                        console.log(mImgUrl);
+                        document.getElementById('imgref').value = mImgUrl;
+                        // firebase.database().ref('maths/' + mfiles[0].name).set({
+                        //     Name: mfiles[0].name,
+                        //     Link: mImgUrl
+                        // });
+                        alert('image added successfully');
+
+                    }
+                    );
+                });
+
+        }
+
+    }
+
+
+
+    //-----------------------------Retrieval------------------------
+
+
+
+
+</script>
 
 </html>
